@@ -223,6 +223,9 @@
     <Compile Include="Assets\Scripts\SurfaceMeshesToPlanes.cs" />
     <Compile Include="Assets\Scripts\SurfacePlane.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Shaders\BlueLinesOnWalls.shader" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>
