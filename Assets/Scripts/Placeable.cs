@@ -127,14 +127,14 @@ public class Placeable : MonoBehaviour
     {
         /* TODO: 4.a CODE ALONG 4.a */
 
-        //if (!IsPlacing)
-        //{
-        //    OnPlacementStart();
-        //}
-        //else
-        //{
-        //    OnPlacementStop();
-        //}
+        if (!IsPlacing)
+        {
+            OnPlacementStart();
+        }
+        else
+        {
+            OnPlacementStop();
+        }
     }
 
     /// <summary>
@@ -144,39 +144,39 @@ public class Placeable : MonoBehaviour
     {
         /* TODO: 4.a CODE ALONG 4.a */
 
-        //if (IsPlacing)
-        //{
-        //    // Move the object.
-        //    Move();
+        if (IsPlacing)
+        {
+            // Move the object.
+            Move();
 
-        //    // Set the visual elements.
-        //    Vector3 targetPosition;
-        //    Vector3 surfaceNormal;
-        //    bool canBePlaced = ValidatePlacement(out targetPosition, out surfaceNormal);
-        //    DisplayBounds(canBePlaced);
-        //    DisplayShadow(targetPosition, surfaceNormal, canBePlaced);
-        //}
-        //else
-        //{
-        //    // Disable the visual elements.
-        //    boundsAsset.SetActive(false);
-        //    shadowAsset.SetActive(false);
+            // Set the visual elements.
+            Vector3 targetPosition;
+            Vector3 surfaceNormal;
+            bool canBePlaced = ValidatePlacement(out targetPosition, out surfaceNormal);
+            DisplayBounds(canBePlaced);
+            DisplayShadow(targetPosition, surfaceNormal, canBePlaced);
+        }
+        else
+        {
+            // Disable the visual elements.
+            boundsAsset.SetActive(false);
+            shadowAsset.SetActive(false);
 
-        //    // Gracefully place the object on the target surface.
-        //    float dist = (gameObject.transform.position - targetPosition).magnitude;
-        //    if (dist > 0)
-        //    {
-        //        gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, targetPosition, placementVelocity / dist);
-        //    }
-        //    else
-        //    {
-        //        // Unhide the child object(s) to make placement easier.
-        //        for (int i = 0; i < ChildrenToHide.Count; i++)
-        //        {
-        //            ChildrenToHide[i].SetActive(true);
-        //        }
-        //    }
-        //}
+            // Gracefully place the object on the target surface.
+            float dist = (gameObject.transform.position - targetPosition).magnitude;
+            if (dist > 0)
+            {
+                gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, targetPosition, placementVelocity / dist);
+            }
+            else
+            {
+                // Unhide the child object(s) to make placement easier.
+                for (int i = 0; i < ChildrenToHide.Count; i++)
+                {
+                    ChildrenToHide[i].SetActive(true);
+                }
+            }
+        }
     }
 
     /// <summary>

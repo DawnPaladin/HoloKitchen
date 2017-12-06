@@ -6,5 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Main.unity
-    guid: 16ee5d29cfb793f4993de6befc3498c9
+    path: Assets/Scenes/Planetarium.unity
+    guid: 06a1d1d333be52f4ca1dd95d43bd11f7

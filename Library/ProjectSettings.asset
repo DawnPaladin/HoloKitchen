@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 13
-  productGUID: 156cdbc2dc33f964c9393af4c8ec0386
+  productGUID: fbb12d6da3f6d3c419d111efd1a41a85
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   defaultScreenOrientation: 4
@@ -532,8 +532,8 @@ PlayerSettings:
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany
-  metroCertificateNotAfter: 8047e673f38cd401
-  metroApplicationDescription: HoloKitchen
+  metroCertificateNotAfter: 806fa756468cd401
+  metroApplicationDescription: Planetarium
   wsaImages: {}
   metroTileShortName: 
   metroCommandLineArgsFile: 

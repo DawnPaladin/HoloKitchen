@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{75E61C84-3FA3-26BB-C605-0362BCDED760}</ProjectGuid>
+    <ProjectGuid>{AEB12327-06AC-2233-F715-15427C6B518D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -217,26 +217,33 @@
     <Compile Include="Assets\HoloToolkit-SpatialMapping-230\Input\Scripts\GazeManager.cs" />
     <Compile Include="Assets\HoloToolkit-SpatialMapping-230\Input\Scripts\GestureManager.cs" />
     <Compile Include="Assets\HoloToolkit-SpatialMapping-230\Input\Scripts\HandsManager.cs" />
+    <Compile Include="Assets\HoloToolkit-SpatialMapping-230\SpatialMapping\Scripts\ObjectSurfaceObserver.cs" />
+    <Compile Include="Assets\HoloToolkit-SpatialMapping-230\SpatialMapping\Scripts\PlaneFinding.cs" />
+    <Compile Include="Assets\HoloToolkit-SpatialMapping-230\SpatialMapping\Scripts\RemoveSurfaceVertices.cs" />
+    <Compile Include="Assets\HoloToolkit-SpatialMapping-230\SpatialMapping\Scripts\SpatialMappingManager.cs" />
+    <Compile Include="Assets\HoloToolkit-SpatialMapping-230\SpatialMapping\Scripts\SpatialMappingObserver.cs" />
+    <Compile Include="Assets\HoloToolkit-SpatialMapping-230\SpatialMapping\Scripts\SpatialMappingSource.cs" />
+    <Compile Include="Assets\HoloToolkit-SpatialMapping-230\SpatialMapping\Scripts\SurfaceMeshesToPlanes.cs" />
+    <Compile Include="Assets\HoloToolkit-SpatialMapping-230\SpatialMapping\Scripts\SurfacePlane.cs" />
+    <Compile Include="Assets\HoloToolkit-SpatialMapping-230\Utilities\Scripts\Singleton.cs" />
     <Compile Include="Assets\Scripts\Interactible.cs" />
     <Compile Include="Assets\Scripts\InteractibleManager.cs" />
-    <Compile Include="Assets\Scripts\ObjectSurfaceObserver.cs" />
     <Compile Include="Assets\Scripts\Placeable.cs" />
-    <Compile Include="Assets\Scripts\PlaneFinding.cs" />
     <Compile Include="Assets\Scripts\PlaySpaceManager.cs" />
-    <Compile Include="Assets\Scripts\RemoveSurfaceVertices.cs" />
-    <Compile Include="Assets\Scripts\Singleton.cs" />
+    <Compile Include="Assets\Scripts\SolarSystem\PlanetOcclusion.cs" />
+    <Compile Include="Assets\Scripts\SolarSystem\PlanetOrbit.cs" />
+    <Compile Include="Assets\Scripts\SolarSystem\RotateAsteroids.cs" />
+    <Compile Include="Assets\Scripts\SolarSystem\SunScript.cs" />
     <Compile Include="Assets\Scripts\SpaceCollectionManager.cs" />
-    <Compile Include="Assets\Scripts\SpatialMappingManager.cs" />
-    <Compile Include="Assets\Scripts\SpatialMappingObserver.cs" />
-    <Compile Include="Assets\Scripts\SpatialMappingSource.cs" />
-    <Compile Include="Assets\Scripts\SurfaceMeshesToPlanes.cs" />
-    <Compile Include="Assets\Scripts\SurfacePlane.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\HoloToolkit-SpatialMapping-230\Input\Models\Cursor\UI-Default.shader" />
     <None Include="Assets\HoloToolkit-SpatialMapping-230\SpatialMapping\Shaders\Occlusion.shader" />
     <None Include="Assets\HoloToolkit-SpatialMapping-230\SpatialMapping\Shaders\Wireframe.shader" />
     <None Include="Assets\HoloToolkit-SpatialMapping-230\Utilities\Shaders\StandardFast.shader" />
+    <None Include="Assets\Holograms\Support\Projector\Shaders\default_shader_source\DefaultResourcesExtra\Normal-VertexLit.shader" />
+    <None Include="Assets\Holograms\Support\Projector\Shaders\default_shader_source\DefaultResourcesExtra\Particle Add.shader" />
+    <None Include="Assets\Holograms\Support\Projector\Shaders\default_shader_source\DefaultResourcesExtra\Standard.shader" />
     <None Include="Assets\Shaders\BlueLinesOnWalls.shader" />
     <None Include="Assets\Shaders\OcclusionGrid.shader" />
     <None Include="Assets\Shaders\OccusionRim.shader" />

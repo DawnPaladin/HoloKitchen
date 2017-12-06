@@ -19,31 +19,32 @@ public class SpaceCollectionManager : Singleton<SpaceCollectionManager>
     /// <param name="verticalSurfaces">Vertical surface planes (walls).</param>
     public void GenerateItemsInWorld(List<GameObject> horizontalSurfaces, List<GameObject> verticalSurfaces)
     {
-        List<GameObject> horizontalObjects = new List<GameObject>();
-        List<GameObject> verticalObjects = new List<GameObject>();
+        return;
+        //List<GameObject> horizontalObjects = new List<GameObject>();
+        //List<GameObject> verticalObjects = new List<GameObject>();
 
-        foreach (GameObject spacePrefab in spaceObjectPrefabs)
-        {
-            Placeable placeable = spacePrefab.GetComponent<Placeable>();
-            if (placeable.PlacementSurface == PlacementSurfaces.Horizontal)
-            {
-                horizontalObjects.Add(spacePrefab);
-            }
-            else
-            {
-                verticalObjects.Add(spacePrefab);
-            }
-        }
+        //foreach (GameObject spacePrefab in spaceObjectPrefabs)
+        //{
+        //    Placeable placeable = spacePrefab.GetComponent<Placeable>();
+        //    if (placeable.PlacementSurface == PlacementSurfaces.Horizontal)
+        //    {
+        //        horizontalObjects.Add(spacePrefab);
+        //    }
+        //    else
+        //    {
+        //        verticalObjects.Add(spacePrefab);
+        //    }
+        //}
 
-        if (horizontalObjects.Count > 0)
-        {
-            CreateSpaceObjects(horizontalObjects, horizontalSurfaces, PlacementSurfaces.Horizontal);
-        }
+        //if (horizontalObjects.Count > 0)
+        //{
+        //    CreateSpaceObjects(horizontalObjects, horizontalSurfaces, PlacementSurfaces.Horizontal);
+        //}
 
-        if (verticalObjects.Count > 0)
-        {
-            CreateSpaceObjects(verticalObjects, verticalSurfaces, PlacementSurfaces.Vertical);
-        }
+        //if (verticalObjects.Count > 0)
+        //{
+        //    CreateSpaceObjects(verticalObjects, verticalSurfaces, PlacementSurfaces.Vertical);
+        //}
     }
 
     /// <summary>
@@ -54,70 +55,71 @@ public class SpaceCollectionManager : Singleton<SpaceCollectionManager>
     /// <param name="surfaceType">Type of objects and planes that we are trying to match-up.</param>
     private void CreateSpaceObjects(List<GameObject> spaceObjects, List<GameObject> surfaces, PlacementSurfaces surfaceType)
     {
-        List<int> UsedPlanes = new List<int>();
+        return;
+       // List<int> UsedPlanes = new List<int>();
 
-        // Sort the planes by distance to user.
-        surfaces.Sort((lhs, rhs) =>
-       {
-           Vector3 headPosition = Camera.main.transform.position;
-           Collider rightCollider = rhs.GetComponent<Collider>();
-           Collider leftCollider = lhs.GetComponent<Collider>();
+       // // Sort the planes by distance to user.
+       // surfaces.Sort((lhs, rhs) =>
+       //{
+       //    Vector3 headPosition = Camera.main.transform.position;
+       //    Collider rightCollider = rhs.GetComponent<Collider>();
+       //    Collider leftCollider = lhs.GetComponent<Collider>();
 
-           // This plane is big enough, now we will evaluate how far the plane is from the user's head.  
-           // Since planes can be quite large, we should find the closest point on the plane's bounds to the 
-           // user's head, rather than just taking the plane's center position.
-           Vector3 rightSpot = rightCollider.ClosestPointOnBounds(headPosition);
-           Vector3 leftSpot = leftCollider.ClosestPointOnBounds(headPosition);
+       //    // This plane is big enough, now we will evaluate how far the plane is from the user's head.  
+       //    // Since planes can be quite large, we should find the closest point on the plane's bounds to the 
+       //    // user's head, rather than just taking the plane's center position.
+       //    Vector3 rightSpot = rightCollider.ClosestPointOnBounds(headPosition);
+       //    Vector3 leftSpot = leftCollider.ClosestPointOnBounds(headPosition);
 
-           return Vector3.Distance(leftSpot, headPosition).CompareTo(Vector3.Distance(rightSpot, headPosition));
-       });
+       //    return Vector3.Distance(leftSpot, headPosition).CompareTo(Vector3.Distance(rightSpot, headPosition));
+       //});
 
-        foreach (GameObject item in spaceObjects)
-        {
-            int index = -1;
-            Collider collider = item.GetComponent<Collider>();
+       // foreach (GameObject item in spaceObjects)
+       // {
+       //     int index = -1;
+       //     Collider collider = item.GetComponent<Collider>();
 
-            if (surfaceType == PlacementSurfaces.Vertical)
-            {
-                index = FindNearestPlane(surfaces, collider.bounds.size, UsedPlanes, true);
-            }
-            else
-            {
-                index = FindNearestPlane(surfaces, collider.bounds.size, UsedPlanes, false);
-            }
+       //     if (surfaceType == PlacementSurfaces.Vertical)
+       //     {
+       //         index = FindNearestPlane(surfaces, collider.bounds.size, UsedPlanes, true);
+       //     }
+       //     else
+       //     {
+       //         index = FindNearestPlane(surfaces, collider.bounds.size, UsedPlanes, false);
+       //     }
 
-            // If we can't find a good plane we will put the object floating in space.
-            Vector3 position = Camera.main.transform.position + Camera.main.transform.forward * 2.0f + Camera.main.transform.right * (Random.value - 1.0f) * 2.0f;
-            Quaternion rotation = Quaternion.identity;
+       //     // If we can't find a good plane we will put the object floating in space.
+       //     Vector3 position = Camera.main.transform.position + Camera.main.transform.forward * 2.0f + Camera.main.transform.right * (Random.value - 1.0f) * 2.0f;
+       //     Quaternion rotation = Quaternion.identity;
 
-            // If we do find a good plane we can do something smarter.
-            if (index >= 0)
-            {
-                UsedPlanes.Add(index);
-                GameObject surface = surfaces[index];
-                SurfacePlane plane = surface.GetComponent<SurfacePlane>();
-                position = surface.transform.position + (plane.PlaneThickness * plane.SurfaceNormal);
-                position = AdjustPositionWithSpatialMap(position, plane.SurfaceNormal);
-                rotation = Camera.main.transform.localRotation;
+       //     // If we do find a good plane we can do something smarter.
+       //     if (index >= 0)
+       //     {
+       //         UsedPlanes.Add(index);
+       //         GameObject surface = surfaces[index];
+       //         SurfacePlane plane = surface.GetComponent<SurfacePlane>();
+       //         position = surface.transform.position + (plane.PlaneThickness * plane.SurfaceNormal);
+       //         position = AdjustPositionWithSpatialMap(position, plane.SurfaceNormal);
+       //         rotation = Camera.main.transform.localRotation;
 
-                if (surfaceType == PlacementSurfaces.Vertical)
-                {
-                    // Vertical objects should face out from the wall.
-                    rotation = Quaternion.LookRotation(surface.transform.forward, Vector3.up);
-                }
-                else
-                {
-                    // Horizontal objects should face the user.
-                    rotation = Quaternion.LookRotation(Camera.main.transform.position);
-                    rotation.x = 0f;
-                    rotation.z = 0f;
-                }
-            }
+       //         if (surfaceType == PlacementSurfaces.Vertical)
+       //         {
+       //             // Vertical objects should face out from the wall.
+       //             rotation = Quaternion.LookRotation(surface.transform.forward, Vector3.up);
+       //         }
+       //         else
+       //         {
+       //             // Horizontal objects should face the user.
+       //             rotation = Quaternion.LookRotation(Camera.main.transform.position);
+       //             rotation.x = 0f;
+       //             rotation.z = 0f;
+       //         }
+       //     }
 
-            //Vector3 finalPosition = AdjustPositionWithSpatialMap(position, surfaceType);
-            GameObject spaceObject = Instantiate(item, position, rotation) as GameObject;
-            spaceObject.transform.parent = gameObject.transform;
-        }
+       //     //Vector3 finalPosition = AdjustPositionWithSpatialMap(position, surfaceType);
+       //     GameObject spaceObject = Instantiate(item, position, rotation) as GameObject;
+       //     spaceObject.transform.parent = gameObject.transform;
+       // }
     }    
 
     /// <summary>
