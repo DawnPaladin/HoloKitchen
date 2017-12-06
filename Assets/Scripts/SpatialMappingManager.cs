@@ -184,7 +184,7 @@ namespace Academy.HoloToolkit.Unity
         public void StartObserver()
         {
 #if UNITY_EDITOR
-            // Allow observing if a device is present (Holographic Remoting)
+            // Allow observering if a device is present (Holographic Remoting)
             if (!UnityEngine.XR.XRDevice.isPresent) return;
 #endif
             if (!IsObserverRunning())
@@ -200,7 +200,7 @@ namespace Academy.HoloToolkit.Unity
         public void StopObserver()
         {
 #if UNITY_EDITOR
-            // Allow observing if a device is present (Holographic Remoting)
+            // Allow observering if a device is present (Holographic Remoting)
             if (!UnityEngine.XR.XRDevice.isPresent) return;
 #endif
             if (IsObserverRunning())
