@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114000011487022016}
   - component: {fileID: 114000011684836174}
   - component: {fileID: 114000012735412914}
+  - component: {fileID: 114530788719128482}
   m_Layer: 0
   m_Name: SpatialProcessing
   m_TagString: Untagged
@@ -87,3 +88,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoundsExpansion: 0.1
+--- !u!114 &114530788719128482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013189191010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c051be0b7014734e832cbd308b6b9ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

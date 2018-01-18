@@ -77,6 +77,7 @@ public class PlaySpaceManager : Singleton<PlaySpaceManager>
                     // 3.a: If running, Stop the observer by calling
                     // StopObserver() on the SpatialMappingManager.Instance.
                     SpatialMappingManager.Instance.StopObserver();
+                    Debug.Log("!!Stop Observer!!");
                 }
 
                 // 3.a: Call CreatePlanes() to generate planes.
